@@ -1,2 +1,4 @@
-__pycachce__/
+__pycache__/
 Constants.py
+apod_pipeline.log
+apod.db
