@@ -4,7 +4,6 @@ import logging
 
 logging.basicConfig(filename = "apod_pipeline.log", level = logging.INFO)
 
-
 try:
     apod_data = ExtractTransform.fetch_apod(ExtractTransform.requestDate)
     transformed_data = ExtractTransform.transform_apod(apod_data)

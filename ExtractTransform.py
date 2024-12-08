@@ -1,6 +1,5 @@
 import requests
 import Constants
-import os
 from datetime import datetime
 
 APIKey = Constants.key
@@ -17,7 +16,9 @@ def fetch_apod(date):
         return None
 
 def transform_apod(data):
+    #Formatting Date
     formatted_date = datetime.strptime(data["date"], "%Y-%m-%d").strftime("%d-%m-%Y")
+    #Standardize filename
     filename = f"{formatted_date}_{data['title'].replace(' ', '_')}.jpg"
     return {"date": formatted_date, "title": data['title'] ,"filename": filename, "explanation": data["explanation"], "image_path": data["url"],}
 
